@@ -4,7 +4,12 @@ var passport = require('passport');
 var Account = require('./../models/account');
 
 router.get('/', function(req, res) {
-  res.render('admin-login', { user : req.user });
+  if (!req.user) {
+    //res.redirect('/admin/error');
+    res.render('admin-login', { user : req.user });
+  };
+  res.redirect('/admin/index');
+  //res.render('admin-login', { user : req.user });
 });
 
 router.post('/', passport.authenticate('local', { failureRedirect: '/admin/error'}), function(req, res) {
