@@ -3,82 +3,15 @@ extends layout
 block content
   div(class="jumbotron")
     div(class="container")
-      div(class="dropdown")
-        button(class="btn btn-default dropdown-toggle", type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")
-          div
-          |-&nbsp
-          span(class="caret")
-        ul(class="dropdown-menu", aria-labelledby="dropdownMenu1")
-          li
-            a(href="#") Action
-          li
-            a(href="#") Another action
-          li
-            a(href="#") Something else here
-          li(role="separator", class="divider")
-          li
-            a(href="#") Separated link
-        &nbspВыбор СС
+      form(class="form-inline",  action="/", method="post")
+        div(class="form-group")
+          select(id="selectCs", name="cs", class="form-control")
+            each cs in allCs
+              option(value=cs.id)= cs.title
+          label(for="selectCs", class="sr-only") Выбырите систему связи
+        button(class="btn btn-success", type="submit") Поехали
 
-      div(class="dropdown")
-        button(class="btn btn-default dropdown-toggle", type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")
-          div
-          |-&nbsp
-          span(class="caret")
-        ul(class="dropdown-menu", aria-labelledby="dropdownMenu1")
-          li
-            a(href="#") Спокойный
-          li
-            a(href="#") Возбужденый
-        &nbspСпокойный/Возюужденый
-
-      div(class="dropdown")
-        button(class="btn btn-default dropdown-toggle", type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")
-          div
-          |-&nbsp
-          span(class="caret")
-        ul(class="dropdown-menu", aria-labelledby="dropdownMenu1")
-          li
-            a(href="#") 1
-          li
-            a(href="#") 2
-        &nbspВыбор Кр
-
-        div(class="dropdown")
-        button(class="btn btn-default dropdown-toggle", type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")
-          div
-          |-&nbsp
-          span(class="caret")
-        ul(class="dropdown-menu", aria-labelledby="dropdownMenu1")
-          li
-            a(href="#") 1
-          li
-            a(href="#") 2
-        &nbspКол-во вспышек
-
-        div(class="dropdown")
-        button(class="btn btn-default dropdown-toggle", type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")
-          div
-          |-&nbsp
-          span(class="caret")
-        ul(class="dropdown-menu", aria-labelledby="dropdownMenu1")
-          li
-            a(href="#") 1
-          li
-            a(href="#") 2
-        &nbspСила вспышек
-
-        div(class="dropdown")
-        button(class="btn btn-default dropdown-toggle", type="button", id="dropdownMenu1", data-toggle="dropdown", aria-haspopup="true", aria-expanded="true")
-          div
-          |-&nbsp
-          span(class="caret")
-        ul(class="dropdown-menu", aria-labelledby="dropdownMenu1")
-          li
-            a(href="#") 1
-          li
-            a(href="#") 2
-        &nbspВыбор города
+      
 
 
 block link
