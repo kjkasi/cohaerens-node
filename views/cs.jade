@@ -3,7 +3,7 @@ extends layout
 block content
   div(class="jumbotron")
     div(class="container")
-        h1(class="page-header") Системы связи
+        h3(class="page-header") Системы связи
 
         if info 
           div(class="alert alert-danger", role="alert")
@@ -43,8 +43,11 @@ block content
                   td= cs.fqStart
                   td= cs.fqEnd
                   td
+                    form(action="/cs/#{cs.id}/edit", method="get")
+                      button(type="submit", class="btn btn-warning btn-xs") Редактировать
+                  td
                     form(action="/cs/#{cs.id}/delete", method="post")
-                      button(type="submit", class="btn btn-danger btn-xs") delete
+                      button(type="submit", class="btn btn-danger btn-xs") Удалить
 
 block link
   -var nav_active='Системы связи';

@@ -39,8 +39,19 @@ router.post('/:id/delete', function(req, res) {
   });
 });
 
-router.post('/:id/edit', function(req, res) {
+router.get('/:id/edit', function(req, res) {
   
+  Cs.findById(req.params.id, function (err, cs) {
+    console.log('Edit ' + cs);
+    res.render("cs-edit", {"cs": cs});
+  });
+
+});
+
+router.post('/new', function(req, res) {
+  
+  res.render("cs-new");
+
 });
 
 module.exports = router;
