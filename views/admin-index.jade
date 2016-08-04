@@ -1,0 +1,42 @@
+extends admin
+
+block sidebar
+  
+  ul(class="nav nav-sidebar")
+            li(class="active")
+              a(href="/admin/index") Overview
+            li
+              a(href="/admin/accounts") Accounts
+            li
+              a(href="/admin/boards") Boards
+
+block main
+  
+  h1(class="page-header") Dashboard
+
+  h2(class="sub-header") Section title
+  div(class="table-responsive")
+    table(class="table table-striped")
+      thead
+        tr
+          th #
+          th Header
+          th Header
+          th Header
+          th Header
+      tbody
+        tr
+          td 1,001
+          td Lorem
+          td ipsum
+          td dolor
+          td sit
+
+block breadcrumbs
+
+  ol(class="breadcrumb")
+    li
+      a(href="#") Home
+    li
+      a(href="#") Library
+    li(class="active") Data

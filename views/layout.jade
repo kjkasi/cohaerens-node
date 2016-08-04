@@ -1,7 +1,39 @@
 doctype html
 html
   head
+
     title= title
+
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+
     link(rel='stylesheet', href='/stylesheets/style.css')
+
+    -var nav_active = undefined;
+    -var menu = { 'Главная': '/', 'Настройки': '/admin' };
+    block link
   body
+    
+    nav(class='navbar navbar-inverse navbar-fixed-top')
+      div(class="container-fluid")
+        div(class="navbar-header")
+          button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+            span(class="sr-only") Toggle navigation
+            span(class="icon-bar")
+            span(class="icon-bar")
+            span(class="icon-bar")
+    
+          a(class='navbar-brand', href='/')
+            img(alt="Logo", src="/images/Electronics-48.png", width="20", height="20")
+
+        div(id="navbar", class="navbar-collapse collapse")
+          ul(class='nav navbar-nav')
+
+            each val, key in menu
+              li(class=key==nav_active?"active":undefined)
+                a(href=val, title=key)= key
+            
     block content
+
+  script(src='http://code.jquery.com/jquery.js')
+  script(src='/javascripts/bootstrap.min.js')

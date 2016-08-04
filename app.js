@@ -7,6 +7,13 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admins = require('./routes/admin');
+var accounts = require('./routes/accounts');
+
+var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var cookieSession = require('cookie-session');
 
 var app = express();
 
@@ -20,10 +27,26 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// passport config
+app.use(passport.initialize());
+app.use(passport.session());
+var Account = require('./models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 app.use('/', routes);
 app.use('/users', users);
+app.use("/admin", admins, accounts);
+
+// mongoose
+mongoose.connect('mongodb://localhost/cohaerens');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

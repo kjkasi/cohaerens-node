@@ -40,18 +40,34 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/AM/work/cohaerens"
+		"/C/Users/AM/work/cohaerens",
+		"/C/Users/AM/work/cohaerens/routes",
+		"/C/Users/AM/work/cohaerens/views"
 	],
 	"file_history":
 	[
+		"/C/Program Files/MongoDB/Server/3.2/bin/mongod.cfg",
+		"/C/Users/AM/work/cohaerens/app.js",
+		"/C/Users/AM/work/cohaerens/routes/admin.js",
+		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/views/admin.jade",
+		"/C/Users/AM/work/cohaerens/views/admin-login.jade",
 		"/C/Users/AM/work/cohaerens/routes/index.js",
+		"/C/Users/AM/work/cohaerens/views/layout.jade",
+		"/C/Users/AM/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/AM/work/equilibrium/views/index.jade",
+		"/C/Users/AM/work/equilibrium/views/layout.jade",
+		"/C/Users/AM/work/equilibrium/views/error.jade",
+		"/C/Users/AM/work/equilibrium/views/admin-accounts.jade",
+		"/C/Users/AM/work/equilibrium/package.json",
+		"/C/Users/AM/work/cohaerens/public/stylesheets/bootstrap.css",
+		"/C/Users/AM/work/cohaerens/public/javascripts/npm.js",
+		"/C/Users/AM/work/cohaerens/package.json",
 		"/C/Users/AM/work/cohaerens/bin/www",
 		"/C/Users/AM/work/cohaerens/README.md",
 		"/C/Users/AM/node_modules/express/package.json",
 		"/C/Users/AM/work/myapp/package.json",
-		"/C/Users/AM/work/cohaerens/package.json",
 		"/C/Users/AM/work/cohaerens/LICENSE",
-		"/C/Users/AM/work/cohaerens/app.js",
 		"/C/Users/AM/work/cohaerens/.gitignore",
 		"/C/Users/AM/Downloads/simc-legion-dev/simc-legion-dev/README.md",
 		"/C/Users/AM/Downloads/simc-legion-dev/simc-legion-dev/install",
@@ -174,7 +190,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 229.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

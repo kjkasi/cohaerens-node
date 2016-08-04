@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class="container-fluid")
+    form(class="form-signin", action="/admin", method="post")
+        h2(class="form-signin-heading") Please sign in
+        label(for="inputEmail", class="sr-only") Email address
+        input(type="email", id="inputEmail", name="username", class="form-control", placeholder="Email address", required=true, autofocus=true)
+        label(for="inputPassword", class="sr-only") Password
+        input(type="password", name="password", id="inputPassword", class="form-control", placeholder="Password", required=true)
+        //div(class="checkbox")
+        //  label
+        //    input(type="checkbox" value="remember-me")
+        //    p Remember me
+        br
+        button(class="btn btn-lg btn-primary btn-block", type="submit") Sign in
+
+block link
+  -var nav_active= 'admin';
