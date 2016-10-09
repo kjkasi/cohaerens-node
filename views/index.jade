@@ -3,12 +3,36 @@ extends layout
 block content
   div(class="jumbotron")
     div(class="container")
-      form(class="form-inline",  action="/", method="post")
+      form(class="",  action="/", method="post")
         div(class="form-group")
-          select(id="selectCs", name="cs", class="form-control")
+          label(for="selectCs") Выбырите систему связи&nbsp
+          select(id="selectCs", name="cs")
             each cs in allCs
               option(value=cs.id)= cs.title
-          label(for="selectCs", class="sr-only") Выбырите систему связи
+          br
+          label(for="selectType") Спокойный/Возжденный&nbsp
+          select(id="selectType", name="cs")
+            each cs in allCs
+              option(value=cs.id)= cs.title
+          br
+          label(for="selectType") Выбор Кр&nbsp
+          select(id="selectType", name="cs")
+            each cs in allCs
+              option(value=cs.id)= cs.title
+          br
+          label(for="selectType") Количество вспышек&nbsp
+          select(id="selectType", name="cs")
+            each cs in allCs
+              option(value=cs.id)= cs.title
+          br
+          label(for="selectType") Сила вспышек&nbsp
+          select(id="selectType", name="cs")
+            each cs in allCs
+              option(value=cs.id)= cs.title
+          br
+          label(for="selectType") Выбор города&nbsp
+          input(for="selectType")
+
         button(class="btn btn-success", type="submit") Поехали
 
       

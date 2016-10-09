@@ -3,6 +3,18 @@
 	{
 		"selected_items":
 		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"r",
+				"routes"
+			],
+			[
+				"req",
+				"require"
+			]
 		]
 	},
 	"buffers":
@@ -41,19 +53,38 @@
 	"expanded_folders":
 	[
 		"/C/Users/AM/work/cohaerens",
+		"/C/Users/AM/work/cohaerens/models",
+		"/C/Users/AM/work/cohaerens/public",
 		"/C/Users/AM/work/cohaerens/routes",
 		"/C/Users/AM/work/cohaerens/views"
 	],
 	"file_history":
 	[
-		"/C/Program Files/MongoDB/Server/3.2/bin/mongod.cfg",
+		"/C/Users/AM/work/jade-test/public/form.html",
+		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/jade-test/public/forms.html",
+		"/D/World of Warcraft/WTF/Config.wtf",
+		"/C/Users/AM/Desktop/cache1111111.bat",
+		"/C/Users/AM/Downloads/Noggit 3.1021/noggit.conf",
+		"/D/World of Warcraft/WTF/Account/1#1/config-cache.wtf",
+		"/D/World of Warcraft Beta/WTF/Config.wtf",
+		"/D/zona/Новая папка/Client(GAME)/WoW.mfil",
+		"/D/World of Warcraft/WoW.mfil",
+		"/C/Users/AM/work/cohaerens/routes/cs.js",
+		"/C/Users/AM/work/cohaerens/routes/index.js",
+		"/C/Users/AM/work/cohaerens/views/cs.jade",
+		"/C/Users/AM/work/cohaerens/views/cs-new.jade",
+		"/C/Users/AM/work/cohaerens/views/cs-edit.jade",
+		"/C/Users/AM/work/cohaerens/models/cs.js",
+		"/C/Users/AM/work/cohaerens/views/layout.jade",
 		"/C/Users/AM/work/cohaerens/app.js",
 		"/C/Users/AM/work/cohaerens/routes/admin.js",
-		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/models/account.js",
+		"/C/Users/AM/work/cohaerens/package.json",
+		"/C/Users/AM/work/cohaerens/model/account.js",
+		"/C/Program Files/MongoDB/Server/3.2/bin/mongod.cfg",
 		"/C/Users/AM/work/cohaerens/views/admin.jade",
 		"/C/Users/AM/work/cohaerens/views/admin-login.jade",
-		"/C/Users/AM/work/cohaerens/routes/index.js",
-		"/C/Users/AM/work/cohaerens/views/layout.jade",
 		"/C/Users/AM/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/AM/work/equilibrium/views/index.jade",
 		"/C/Users/AM/work/equilibrium/views/layout.jade",
@@ -62,7 +93,6 @@
 		"/C/Users/AM/work/equilibrium/package.json",
 		"/C/Users/AM/work/cohaerens/public/stylesheets/bootstrap.css",
 		"/C/Users/AM/work/cohaerens/public/javascripts/npm.js",
-		"/C/Users/AM/work/cohaerens/package.json",
 		"/C/Users/AM/work/cohaerens/bin/www",
 		"/C/Users/AM/work/cohaerens/README.md",
 		"/C/Users/AM/node_modules/express/package.json",
@@ -119,7 +149,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
