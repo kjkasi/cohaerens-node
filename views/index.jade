@@ -31,7 +31,9 @@ block content
               option(value=cs.id)= cs.title
           br
           label(for="selectType") Выбор города&nbsp
-          input(for="selectType")
+          select(id="selectCity", name="city")
+            each city in allCity
+              option(value=city.id)= city.title
 
         button(class="btn btn-success", type="submit") Поехали
 

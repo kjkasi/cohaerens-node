@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div(class="jumbotron")
+    div(class="container")
+        h3(class="page-header") Редактрирование #{city.title}
+
+        if info 
+          div(class="alert alert-danger", role="alert")
+            p= info
+
+        form(class="form-inline",  action="/city", method="post")
+          div(class="form-group")
+            label(for="inputTitle", class="sr-only") Title
+            input(type="text", id="inputTitle", name="title", class="form-control", placeholder="Введите название города", required=true, autocomplete="off", value=city.title)
+          &nbsp
+          div(class="form-group")  
+            label(for="inputLat", class="sr-only") Широта
+            input(type="text", name="lat", id="inputLat", class="form-control", placeholder="Введите широту", required=true, autocomplete="off", value=city.lat)
+          &nbsp
+          div(class="form-group")  
+            label(for="inputLong", class="sr-only") Долгота
+            input(type="text", name="long", id="inputLong", class="form-control", placeholder="Введите долготу", required=true, autocomplete="off", value=city.long)
+          &nbsp
+          button(class="btn btn-success", type="submit") Сохранить
+
+block link
+  -var nav_active='Города';
