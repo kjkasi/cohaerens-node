@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"all",
+				"allCity"
+			],
+			[
 				"fun",
 				"function"
 			],
@@ -60,8 +64,15 @@
 	],
 	"file_history":
 	[
-		"/C/Users/AM/work/jade-test/public/form.html",
+		"/C/Users/AM/work/cohaerens/models/city.js",
+		"/C/Users/AM/work/cohaerens/views/city-edit.jade",
+		"/C/Users/AM/work/cohaerens/routes/city.js",
+		"/C/Users/AM/work/cohaerens/routes/index.js",
 		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/views/city.jade",
+		"/C/Users/AM/work/cohaerens/app.js",
+		"/C/Users/AM/work/cohaerens/views/layout.jade",
+		"/C/Users/AM/work/jade-test/public/form.html",
 		"/C/Users/AM/work/jade-test/public/forms.html",
 		"/D/World of Warcraft/WTF/Config.wtf",
 		"/C/Users/AM/Desktop/cache1111111.bat",
@@ -71,13 +82,10 @@
 		"/D/zona/Новая папка/Client(GAME)/WoW.mfil",
 		"/D/World of Warcraft/WoW.mfil",
 		"/C/Users/AM/work/cohaerens/routes/cs.js",
-		"/C/Users/AM/work/cohaerens/routes/index.js",
 		"/C/Users/AM/work/cohaerens/views/cs.jade",
 		"/C/Users/AM/work/cohaerens/views/cs-new.jade",
 		"/C/Users/AM/work/cohaerens/views/cs-edit.jade",
 		"/C/Users/AM/work/cohaerens/models/cs.js",
-		"/C/Users/AM/work/cohaerens/views/layout.jade",
-		"/C/Users/AM/work/cohaerens/app.js",
 		"/C/Users/AM/work/cohaerens/routes/admin.js",
 		"/C/Users/AM/work/cohaerens/models/account.js",
 		"/C/Users/AM/work/cohaerens/package.json",
