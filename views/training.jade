@@ -67,7 +67,7 @@ block content
                   td= training.kp
                   td= training.count
                   td= training.power
-                  td= training.city
+                  td= training.city.title
                   td
                     form(action="/training/#{training.id}/edit", method="get")
                       button(type="submit", class="btn btn-warning btn-xs") Редактировать

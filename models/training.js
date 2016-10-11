@@ -2,12 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Training = new Schema({
-  cs:  Schema.Types.ObjectId,
+  cs:   {type: Schema.Types.ObjectId, ref: 'Cs'},
   sv:  Boolean,
   kp:  Number,
   count:  Number,
   power:  Number,
-  city:  Schema.Types.ObjectId
+  city:  {type: Schema.Types.ObjectId, ref: 'City'}
 });
 
 module.exports = mongoose.model('Training', Training);

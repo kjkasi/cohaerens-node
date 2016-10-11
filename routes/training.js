@@ -8,15 +8,33 @@ var synaptic = require('synaptic');
 
 router.get('/', function(req, res, next) {
 
+  /*
+  Training.find({}).populate('city').exec(function (err, allTraining){
+    res.json(allTraining);
+  });
+*/
+
+  Training.find({}).populate('city').exec(function(err, allTraining){
+    Cs.find({}, function(err, allCs) {
+      if (err) throw err;
+      City.find({}, function(err, allCity) {
+        if (err) throw err;
+        //res.json(allTraining);
+        res.render('training', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining});
+      });
+    });
+  });
+/*
   Training.find({}, function(err, allTraining){
     Cs.find({}, function(err, allCs) {
       if (err) throw err;
       City.find({}, function(err, allCity) {
         if (err) throw err;
-          res.render('training', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining});
+        //res.json(allTraining);
+        res.render('training', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining});
       });
     });    
-  });
+  }); */
 
   /*
   var Neuron = synaptic.Neuron,
@@ -65,28 +83,40 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res) {
 
-  var training = new Training ({
-        cs: req.body.cs,
-        sv: req.body.sv,
-        kp: req.body.kp,
-        count: req.body.count,
-        power: req.body.power,
-        city: req.body.city,  
-    });
+  City.findById(req.body.city, function(err, city){
 
-  training.save(function(err){
     if (err) throw err;
+    var training = new Training ({
+          cs: req.body.cs,
+          sv: req.body.sv,
+          kp: req.body.kp,
+          count: req.body.count,
+          power: req.body.power,
+          city: city._id,  
+      });
 
-    Training.find({}, function(err, allTraining) {
+    //res.json(training);
+
+    
+    training.save(function(err){
+
       if (err) throw err;
-        res.render('training');
+      res.redirect('training');
+
     });
   });
+
 });
 
 router.post('/:id/delete', function(req, res) {
   
-  res.sendStatus(200);
+  //res.redirect("/city");
+  Training.findById(req.params.id, function (err, training) {
+    training.remove();
+    res.redirect("training");
+  });
+
+  //res.sendStatus(200);
   
 });
 
