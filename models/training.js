@@ -3,17 +3,30 @@ var Schema = mongoose.Schema;
 
 var Training = new Schema({
   cs:   {type: Schema.Types.ObjectId, ref: 'Cs'},
-  sv:  Boolean,
+  sv:  Number,
   kp:  Number,
   count:  Number,
-  power:  String,
-  city:  {type: Schema.Types.ObjectId, ref: 'City'}
+  power:  Number,
+  city:  {type: Schema.Types.ObjectId, ref: 'City'},
+  result: Number
 });
 
-Training.methods.convert = function() {
+Training.methods.getInput = function() {
 
-	var neurons = "test";
-	return neurons;
+	var inputArr = [];
+	inputArr.push(this.sv);
+	inputArr.push(this.kp / 10);
+	inputArr.push(this.count / 4);
+	inputArr.push(this.power / 5);
+
+	return inputArr;
+};
+
+Training.methods.getOutput = function() {
+
+	var outputArr = [this.result];
+
+	return outputArr;
 };
 
 module.exports = mongoose.model('Training', Training);

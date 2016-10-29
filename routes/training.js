@@ -93,7 +93,8 @@ router.post('/', function(req, res) {
           kp: req.body.kp,
           count: req.body.count,
           power: req.body.power,
-          city: city._id,  
+          city: city._id,
+          result: req.body.result,  
       });
 
     //res.json(training);
@@ -114,7 +115,7 @@ router.post('/:id/delete', function(req, res) {
   //res.redirect("/city");
   Training.findById(req.params.id, function (err, training) {
     training.remove();
-    res.redirect("training");
+    res.redirect("/training");
   });
 
   //res.sendStatus(200);
