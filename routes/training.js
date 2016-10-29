@@ -11,10 +11,11 @@ router.get('/', function(req, res, next) {
   /*
   Training.find({}).populate('city').exec(function (err, allTraining){
     res.json(allTraining);
-  });
+  });s
 */
 
-  Training.find({}).populate('city').exec(function(err, allTraining){
+  Training.find({}).populate('city').populate('cs').exec(function(err, allTraining){
+    if (err) throw err;
     Cs.find({}, function(err, allCs) {
       if (err) throw err;
       City.find({}, function(err, allCity) {

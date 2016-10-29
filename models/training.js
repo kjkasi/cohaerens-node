@@ -6,8 +6,14 @@ var Training = new Schema({
   sv:  Boolean,
   kp:  Number,
   count:  Number,
-  power:  Number,
+  power:  String,
   city:  {type: Schema.Types.ObjectId, ref: 'City'}
 });
+
+Training.methods.convert = function() {
+
+	var neurons = "test";
+	return neurons;
+};
 
 module.exports = mongoose.model('Training', Training);
