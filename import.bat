@@ -1,0 +1,2 @@
+mongorestore -d cohaerens
+pause

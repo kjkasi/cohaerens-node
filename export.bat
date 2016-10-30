@@ -1,0 +1,2 @@
+mongodump -d cohaerens
+pause

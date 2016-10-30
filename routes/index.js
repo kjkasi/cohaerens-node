@@ -37,12 +37,22 @@ router.post('/', function(req, res) {
 
     var trainingSet = [];
 
-    allTraining.forEach(function(item){
+    /*allTraining.forEach(function(item){
       trainingSet.push({
         input: item.getInput(),
         output: item.getOutput()
       });
-    });
+    });*/
+
+    for (var i = 0; i < allTraining.length; i++) {
+
+      item = allTraining[i];
+
+      trainingSet.push({
+        input: item.getInput(),
+        output: item.getOutput()
+      });
+    }
 
     trainer.train(trainingSet);
 
@@ -54,16 +64,18 @@ router.post('/', function(req, res) {
           result: req.body.result,  
     });
 
-    console.log(test);
+    console.log(test.getInput());
 
-//    console.log("set: \n" + trainingSet + "\nresult: " + myNet.activate(test.getInput));
+    //console.log("set: \n" + trainingSet + "\nresult: " + myNet.activate(test.getInput()));
+
+    //res.render('index', {info: "Вероятность" + myNet.activate(test.getInput())});
 
     /*trainingSet.push({
       activate: test,
       result: myNet.activate(test)
     });*/
 
-    res.json(trainingSet);
+    res.json("Вероятность" + myNet.activate(test.getInput()));
   });
 
 });
