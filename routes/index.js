@@ -75,7 +75,15 @@ router.post('/', function(req, res) {
       result: myNet.activate(test)
     });*/
 
-    res.json("Вероятность" + myNet.activate(test.getInput()));
+    Cs.find({}, function(err, allCs) {
+      if (err) throw err;
+      City.find({}, function(err, allCity) {
+        if (err) throw err;
+        res.render('index', { title: 'Сohaerens', "allCs": allCs, "allCity": allCity, info: "Вероятность:" + myNet.activate(test.getInput())});
+      });
+    });
+
+    //res.json("Вероятность" + myNet.activate(test.getInput()));
   });
 
 });
