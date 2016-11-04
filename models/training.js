@@ -2,12 +2,14 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Training = new Schema({
+  title: String,
   cs:   {type: Schema.Types.ObjectId, ref: 'Cs'},
   sv:  Number,
   kp:  Number,
   count:  Number,
   power:  Number,
   city:  {type: Schema.Types.ObjectId, ref: 'City'},
+  date: Date,
   result: Number
 });
 

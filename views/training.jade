@@ -11,12 +11,15 @@ block content
 
         form(class="", action="/training", method="post")
           div(class="form-group")
+            label(for="inputTitle") Введите название&nbsp
+            input(type="text", id="inputTitle", name="title", placeholder="Название тренировки", required=false, autocomplete="off", style="width:15%")
+            br
             label(for="selectCs") Выбор системы связи&nbsp
             select(id="selectCs", name="cs")
               each cs in allCs
                 option(value=cs.id)= cs.title
             br
-            label(for="selectSV") Спокойный/Возбежденный&nbsp
+            label(for="selectSV") Спокойный/Возбужденный&nbsp
             select(id="selectSV", name="sv")
               option(value=0)= 'Спокойный'
               option(value=1)= 'Возбужденный'
@@ -54,6 +57,9 @@ block content
               each city in allCity
                 option(value=city.id)= city.title
             br
+            label(for="selectDate") Выбор даты&nbsp
+            input(id="selectDate", name="date", type="datetime-local")
+            br
             label(for="selectResult") Выбор результата&nbsp
             select(id="selectResult", name="result")
               option(value=0)= 'False'
@@ -67,25 +73,30 @@ block content
           thead
             tr
               th #
+              th Название
               th Система связи
-              th Спокойный/Возбежденный
+              th Спокойный/Возбужденный
               th Выбор Кр
               th Количество вспышек
               th Сила вспышек
               th Город
-              th Edit
-              th Delete
+              th Дата
+              th Результат
+              th Редактировать
+              th Удалить
           tbody
             if allTraining
               each training, index in allTraining
                 tr
                   td= index + 1
+                  td= training.title
                   td= training.cs.title
                   td= training.sv
                   td= training.kp
                   td= training.count
                   td= training.power
                   td= training.city.title
+                  td= training.date
                   td= training.result
                   td
                     form(action="/training/#{training.id}/edit", method="get")

@@ -88,16 +88,18 @@ router.post('/', function(req, res) {
 
     if (err) throw err;
     var training = new Training ({
+          title: req.body.title,
           cs: req.body.cs,
           sv: req.body.sv,
           kp: req.body.kp,
           count: req.body.count,
           power: req.body.power,
           city: city._id,
+          date: req.body.date,
           result: req.body.result,  
       });
 
-    //res.json(training);
+    //res.json(req.body);
 
     
     training.save(function(err){
@@ -123,8 +125,20 @@ router.post('/:id/delete', function(req, res) {
 });
 
 router.get('/:id/edit', function(req, res) {
-  
-  res.sendStatus(200);
+
+  Training.find({}).populate('city').populate('cs').exec(function(err, allTraining){
+    if (err) throw err;
+    Cs.find({}, function(err, allCs) {
+      if (err) throw err;
+      City.find({}, function(err, allCity) {
+        if (err) throw err;
+        Training.findById(req.params.id, function(err, training){
+          if (err) throw err;
+          res.render('training-edit', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining, "training": training, "info": training});
+        });
+      });
+    });
+  });  
 
 });
 

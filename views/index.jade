@@ -5,12 +5,12 @@ block content
     div(class="container")
       form(class="",  action="/", method="post")
         div(class="form-group")
-          label(for="selectCs") Выбырите систему связи&nbsp
+          label(for="selectCs") Выбирите систему связи&nbsp
           select(id="selectCs", name="cs")
             each cs in allCs
               option(value=cs.id)= cs.title
           br
-          label(for="selectSV") Спокойный/Возбежденный&nbsp
+          label(for="selectSV") Спокойный/Возбужденный&nbsp
           select(id="selectSV", name="sv")
             option(value=0)= 'Спокойный'
             option(value=1)= 'Возбужденный'
