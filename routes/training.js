@@ -134,7 +134,7 @@ router.get('/:id/edit', function(req, res) {
         if (err) throw err;
         Training.findById(req.params.id, function(err, training){
           if (err) throw err;
-          res.render('training-edit', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining, "training": training, "info": training});
+          res.render('training-edit', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining, training: training, "info": training.getDateFormat(), "date": training.getDateFormat()});
         });
       });
     });

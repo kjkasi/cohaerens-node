@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"tra",
+				"training"
+			],
+			[
+				"fin",
+				"findById"
+			],
+			[
 				"get",
 				"getInput"
 			],
@@ -56,19 +64,19 @@
 	"buffers":
 	[
 		{
-			"file": "routes/training.js",
+			"file": "models/training.js",
 			"settings":
 			{
-				"buffer_size": 3137,
+				"buffer_size": 674,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "models/training.js",
+			"file": "routes/training.js",
 			"settings":
 			{
-				"buffer_size": 643,
+				"buffer_size": 3800,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -77,34 +85,29 @@
 			"file": "views/training.jade",
 			"settings":
 			{
-				"buffer_size": 3412,
+				"buffer_size": 3933,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "routes/index.js",
+			"file": "views/city.jade",
 			"settings":
 			{
-				"buffer_size": 2321,
+				"buffer_size": 2047,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/index.jade",
+			"contents": "extends layout\n\nblock content\n  div(class=\"jumbotron\")\n    div(class=\"container\")\n        h3(class=\"page-header\") Редактирование тренировки\n\n        if info \n          div(class=\"alert alert-danger\", role=\"alert\")\n            p= info\n\n        form(class=\"\", action=\"/training/edit\", method=\"post\")\n          div(class=\"form-group\")\n            label(for=\"selectCs\") Выбор системы связи&nbsp\n            select(id=\"selectCs\", name=\"cs\")\n              each cs in allCs\n                option(value=cs.id, selected=cs.id == training.cs)= cs.title\n            br\n            label(for=\"selectSV\") Спокойный/Возбежденный&nbsp\n            select(id=\"selectSV\", name=\"sv\")\n              option(value=0, selected=training.sv == 0)= 'Спокойный'\n              option(value=1, selected=training.sv == 1)= 'Возбужденный'\n            br\n            label(for=\"selectKp\") Выбор Кр&nbsp\n            select(id=\"selectKp\", name=\"kp\")\n              option(value=0, selected=training.kp == 0)= '0'\n              option(value=1, selected=training.kp == 1)= '1'\n              option(value=2, selected=training.kp == 2)= '2'\n              option(value=3, selected=training.kp == 3)= '3'\n              option(value=4, selected=training.kp == 4)= '4'\n              option(value=5, selected=training.kp == 5)= '5'\n              option(value=6, selected=training.kp == 6)= '6'\n              option(value=7, selected=training.kp == 7)= '7'\n              option(value=8, selected=training.kp == 8)= '8'\n              option(value=9, selected=training.kp == 9)= '9'\n            br\n            label(for=\"selectСount\") Кол-во вспышек&nbsp\n            select(id=\"selectСount\", name=\"count\")\n              option(value=0,  selected=training.count == 0)= '0'\n              option(value=1, selected=training.count == 1)= '1'\n              option(value=2, selected=training.count == 2)= '2'\n              option(value=3, selected=training.count == 3)= '3'\n            br\n            label(for=\"selectPower\") Сила вспышек&nbsp\n            select(id=\"selectPower\", name=\"power\")\n              option(value=0, selected=training.power == 0)= 'A'\n              option(value=1, selected=training.power == 1)= 'B'\n              option(value=2, selected=training.power == 2)= 'C'\n              option(value=3, selected=training.power == 3)= 'M'\n              option(value=4, selected=training.power == 4)= 'X'\n            br\n            label(for=\"selectCity\") Выбор города&nbsp\n            select(id=\"selectCity\", name=\"city\")\n              each city in allCity\n                option(value=city.id, selected=city.id == training.city)= city.title\n            br\n            label(for=\"selectDate\") Выбор даты&nbsp\n            input(id=\"selectDate\", name=\"date\", type=\"datetime-local\", value=\"2014-01-02T11:42:13.510\")\n            br\n            label(for=\"selectResult\") Выбор результата&nbsp\n            select(id=\"selectResult\", name=\"result\")\n              option(value=0, selected=training.result == 0)= 'False'\n              option(value=1, selected=training.result == 1)= 'True'\n\n          button(class=\"btn btn-success\", type=\"submit\") Сохранить\n\nblock link\n  -var nav_active='Тренировка';",
+			"file": "views/training-edit.jade",
+			"file_size": 3369,
+			"file_write_time": 131227520093626169,
 			"settings":
 			{
-				"buffer_size": 1919,
+				"buffer_size": 3154,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app.js",
-			"settings":
-			{
-				"buffer_size": 2351,
 				"line_ending": "Windows"
 			}
 		}
@@ -149,21 +152,22 @@
 	],
 	"file_history":
 	[
+		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/views/city.jade",
+		"/C/Users/AM/work/cohaerens/views/cs.jade",
+		"/C/Users/AM/work/cohaerens/routes/index.js",
 		"/C/Users/AM/work/cohaerens/views/layout.jade",
 		"/C/Users/AM/work/cohaerens/models/sv.js",
 		"/C/World of Warcraft/Interface/AddOns/WorldQuestGroupFinder/WorldQuestGroupFinder.toc",
 		"/C/World of Warcraft/Interface/AddOns/ServerHop/ServerHop.toc",
 		"/C/World of Warcraft/Interface/AddOns/Skada/Skada.toc",
 		"/C/Users/AM/work/cohaerens/models/account.js",
-		"/C/Users/AM/work/cohaerens/routes/index.js",
 		"/C/Users/AM/work/cohaerens/models/training.js",
 		"/C/Users/AM/work/cohaerens/views/training.jade",
-		"/C/Users/AM/work/cohaerens/views/index.jade",
 		"/C/Users/AM/work/cohaerens/app.js",
 		"/C/Users/AM/work/cohaerens/models/city.js",
 		"/C/Users/AM/work/cohaerens/views/city-edit.jade",
 		"/C/Users/AM/work/cohaerens/routes/city.js",
-		"/C/Users/AM/work/cohaerens/views/city.jade",
 		"/C/Users/AM/work/jade-test/public/form.html",
 		"/C/Users/AM/work/jade-test/public/forms.html",
 		"/D/World of Warcraft/WTF/Config.wtf",
@@ -174,7 +178,6 @@
 		"/D/zona/Новая папка/Client(GAME)/WoW.mfil",
 		"/D/World of Warcraft/WoW.mfil",
 		"/C/Users/AM/work/cohaerens/routes/cs.js",
-		"/C/Users/AM/work/cohaerens/views/cs.jade",
 		"/C/Users/AM/work/cohaerens/views/cs-new.jade",
 		"/C/Users/AM/work/cohaerens/views/cs-edit.jade",
 		"/C/Users/AM/work/cohaerens/models/cs.js",
@@ -237,24 +240,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "routes/training.js",
+					"file": "models/training.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3137,
+						"buffer_size": 674,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2354,
-								2354
+								294,
+								294
 							]
 						],
 						"settings":
@@ -262,34 +265,6 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 462.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "models/training.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 643,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								280,
-								280
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -299,50 +274,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "views/training.jade",
+					"buffer": 1,
+					"file": "routes/training.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3412,
+						"buffer_size": 3800,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2127,
-								2127
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 420.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "routes/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2321,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2321,
-								2321
+								3551,
+								3551
 							]
 						],
 						"settings":
@@ -352,27 +297,57 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 490.0,
+						"translation.y": 1302.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "views/index.jade",
+					"buffer": 2,
+					"file": "views/training.jade",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1919,
+						"buffer_size": 3933,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1801,
-								1801
+								3475,
+								3475
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/city.jade",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								292,
+								315
 							]
 						],
 						"settings":
@@ -389,30 +364,30 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app.js",
-					"semi_transient": true,
+					"buffer": 4,
+					"file": "views/training-edit.jade",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2351,
+						"buffer_size": 3154,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1676,
-								1685
+								2600,
+								2600
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,

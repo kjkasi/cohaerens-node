@@ -96,7 +96,7 @@ block content
                   td= training.count
                   td= training.power
                   td= training.city.title
-                  td= training.date
+                  td= training.getDateFormat()
                   td= training.result
                   td
                     form(action="/training/#{training.id}/edit", method="get")

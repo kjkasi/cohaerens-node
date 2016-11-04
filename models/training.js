@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var moment = require('moment');
 
 var Training = new Schema({
   title: String,
@@ -29,6 +30,12 @@ Training.methods.getOutput = function() {
 	var outputArr = [this.result];
 
 	return outputArr;
+};
+
+Training.methods.getDateFormat = function() {
+  //2014-01-02T11:42:13.510
+  return moment(this.date).format("YYYY-MM-DDTHH:mm:ss");
+
 };
 
 module.exports = mongoose.model('Training', Training);
