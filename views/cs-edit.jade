@@ -11,18 +11,21 @@ block content
 
         form(class="form-inline",  action="/cs", method="post")
           div(class="form-group")
-            label(for="inputTitle", class="sr-only") Title
-            input(type="text", id="inputTitle", name="title", class="form-control", placeholder="Введите название системы связи", required=true, autocomplete="off", value=cs.title)
-          &nbsp
-          div(class="form-group")  
-            label(for="inputFqStart", class="sr-only") Начальная Частота
-            input(type="text", name="fqStart", id="inputFqStart", class="form-control", placeholder="Введите начальную частоту", required=true, autocomplete="off", value=cs.fqStart)
-          &nbsp
-          div(class="form-group")  
-            label(for="inputFqEnd", class="sr-only") Конечная частота
-            input(type="text", name="fqEnd", id="inputFqStart", class="form-control", placeholder="Введите конечную частоту", required=true, autocomplete="off", value=cs.fqEnd)
-          &nbsp
-          button(class="btn btn-success", type="submit") Сохранить
+            label(for="inputTitle") Название&nbsp
+            input(type="text", id="inputTitle", name="title", placeholder="Введите название системы связи", required=true, autocomplete="off", value=cs.title)
+            br
+            label(for="inputFqStart") Начальная Частота&nbsp
+            input(type="text", name="fqStart", id="inputFqStart", placeholder="Введите начальную частоту", required=true, autocomplete="off", value=cs.fqStart)
+            br
+            label(for="inputFqEnd") Конечная частота&nbsp
+            input(type="text", name="fqEnd", id="inputFqStart", placeholder="Введите конечную частоту", required=true, autocomplete="off", value=cs.fqEnd)
+            br
+            label(for="selectConditions") Выберите условия&nbsp
+            select(id="selectConditions", multiple, size=1)
+              each condition in conditions
+                option(value=condition.id)= condition.title
+            br
+            button(class="btn btn-success", type="submit") Сохранить
 
 block link
   -var nav_active='Системы связи';

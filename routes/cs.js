@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Cs = require('./../models/cs');
+var condition = require('./../models/condition');
 
 router.get('/', function(req, res, next) {
   
@@ -42,8 +43,10 @@ router.post('/:id/delete', function(req, res) {
 router.get('/:id/edit', function(req, res) {
   
   Cs.findById(req.params.id, function (err, cs) {
-    console.log('Edit ' + cs);
-    res.render("cs-edit", {"cs": cs});
+    if (err) throw err;
+    condition.find({}, function(err, conditions) {
+      res.render("cs-edit", {"cs": cs, "conditions": conditions});
+    });
   });
 
 });

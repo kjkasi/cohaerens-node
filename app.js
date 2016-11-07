@@ -12,6 +12,7 @@ var accounts = require('./routes/accounts');
 var cs = require('./routes/cs');
 var city = require('./routes/city');
 var training = require('./routes/training');
+var condition = require('./routes/condition');
 
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -50,6 +51,7 @@ app.use('/admin', admins, accounts);
 app.use('/cs', cs);
 app.use('/city', city);
 app.use('/training', training);
+app.use('/condition', condition);
 
 // mongoose
 mongoose.connect('mongodb://localhost/cohaerens');

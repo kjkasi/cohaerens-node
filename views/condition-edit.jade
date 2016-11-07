@@ -1,0 +1,67 @@
+extends layout
+
+block content
+  div(class="jumbotron")
+    div(class="container")
+        h3(class="page-header") Редактирование тренировки
+
+        if info 
+          div(class="alert alert-danger", role="alert")
+            p= info
+
+        form(class="", action="/condition/edit", method="post")
+          div(class="form-group")
+            label(for="selectCs") Выбор системы связи&nbsp
+            select(id="selectCs", name="cs")
+              each cs in allCs
+                option(value=cs.id, selected=cs.id == condition.cs)= cs.title
+            br
+            label(for="selectSV") Спокойный/Возбежденный&nbsp
+            select(id="selectSV", name="sv")
+              option(value=0, selected=condition.sv == 0)= 'Спокойный'
+              option(value=1, selected=condition.sv == 1)= 'Возбужденный'
+            br
+            label(for="selectKp") Выбор Кр&nbsp
+            select(id="selectKp", name="kp")
+              option(value=0, selected=condition.kp == 0)= '0'
+              option(value=1, selected=condition.kp == 1)= '1'
+              option(value=2, selected=condition.kp == 2)= '2'
+              option(value=3, selected=condition.kp == 3)= '3'
+              option(value=4, selected=condition.kp == 4)= '4'
+              option(value=5, selected=condition.kp == 5)= '5'
+              option(value=6, selected=condition.kp == 6)= '6'
+              option(value=7, selected=condition.kp == 7)= '7'
+              option(value=8, selected=condition.kp == 8)= '8'
+              option(value=9, selected=condition.kp == 9)= '9'
+            br
+            label(for="selectСount") Кол-во вспышек&nbsp
+            select(id="selectСount", name="count")
+              option(value=0,  selected=condition.count == 0)= '0'
+              option(value=1, selected=condition.count == 1)= '1'
+              option(value=2, selected=condition.count == 2)= '2'
+              option(value=3, selected=condition.count == 3)= '3'
+            br
+            label(for="selectPower") Сила вспышек&nbsp
+            select(id="selectPower", name="power")
+              option(value=0, selected=condition.power == 0)= 'A'
+              option(value=1, selected=condition.power == 1)= 'B'
+              option(value=2, selected=condition.power == 2)= 'C'
+              option(value=3, selected=condition.power == 3)= 'M'
+              option(value=4, selected=condition.power == 4)= 'X'
+            br
+            label(for="selectCity") Выбор города&nbsp
+            select(id="selectCity", name="city")
+              each city in allCity
+                option(value=city.id, selected=city.id == condition.city)= city.title
+            br
+            label(for="selectDate") Выбор даты&nbsp
+            input(id="selectDate", name="date", type="datetime-local", value=date)
+            br
+            label(for="selectResult") Выбор результата&nbsp
+            label(for="selectResult") Выбор результата&nbsp
+            input(type="text", id="selectResult", name="result", placeholder="Результат", required=false, autocomplete="off", value=condition.result)
+
+          button(class="btn btn-success", type="submit") Сохранить
+
+block link
+  -var nav_active='Тренировка';
