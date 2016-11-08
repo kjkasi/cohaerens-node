@@ -2,9 +2,11 @@ var express = require('express');
 var router = express.Router();
 var Cs = require('./../models/cs');
 var City = require('./../models/city');
-var Training = require('./../models/training');
+//var Training = require('./../models/training');
 
-var synaptic = require('synaptic');
+//var synaptic = require('synaptic');
+
+var Condition = require('./../models/condition');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -23,7 +25,30 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res) {
 
-  Training.find({city: req.body.city, cs: req.body.cs}, function(err, allTraining){
+  //res.json(req.body);
+
+  console.log("req.body: " + req.body);
+
+  Condition.findOne({cs: req.body.cs, sv: req.body.sv, kp: req.body.kp, count: req.body.count, power: req.body.power, city: req.body.city}, function(err, condition) {
+
+    console.log("condition: " + condition);
+
+    if (err) throw err;
+    Cs.find({}, function(err, allCs) {
+      if (err) throw err;
+      City.find({}, function(err, allCity) {
+        if (err) throw err;
+        //res.json(condition);
+        res.render('index', { title: 'Сohaerens', "allCs": allCs, "allCity": allCity, info: "Информация:" + condition.result});
+      });
+    });
+
+    
+    //res.render('index', { title: 'Сohaerens', "allCs": allCs, "allCity": allCity, info: "Информация:" + condition.result});
+
+  });
+
+  /*Training.find({city: req.body.city, cs: req.body.cs}, function(err, allTraining){
     if (err) throw err;
 
     var Neuron = synaptic.Neuron,
@@ -36,13 +61,6 @@ router.post('/', function(req, res) {
     var trainer = new Trainer(myNet);
 
     var trainingSet = [];
-
-    /*allTraining.forEach(function(item){
-      trainingSet.push({
-        input: item.getInput(),
-        output: item.getOutput()
-      });
-    });*/
 
     for (var i = 0; i < allTraining.length; i++) {
 
@@ -66,15 +84,6 @@ router.post('/', function(req, res) {
 
     console.log(test.getInput());
 
-    //console.log("set: \n" + trainingSet + "\nresult: " + myNet.activate(test.getInput()));
-
-    //res.render('index', {info: "Вероятность" + myNet.activate(test.getInput())});
-
-    /*trainingSet.push({
-      activate: test,
-      result: myNet.activate(test)
-    });*/
-
     Cs.find({}, function(err, allCs) {
       if (err) throw err;
       City.find({}, function(err, allCity) {
@@ -82,9 +91,7 @@ router.post('/', function(req, res) {
         res.render('index', { title: 'Сohaerens', "allCs": allCs, "allCity": allCity, info: "Вероятность:" + myNet.activate(test.getInput())});
       });
     });
-
-    //res.json("Вероятность" + myNet.activate(test.getInput()));
-  });
+  });*/
 
 });
 

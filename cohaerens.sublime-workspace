@@ -149,6 +149,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/AM/Google Диск/volgatech/Диплом/vstu081_366_2012F.dat",
+		"/E/ir50081_366_2012F.dat",
 		"/C/Users/AM/work/cohaerens/routes/training.js",
 		"/C/Users/AM/work/cohaerens/views/training-edit.jade",
 		"/C/Users/AM/work/cohaerens/app.js",
@@ -240,7 +242,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -328,7 +330,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -344,8 +346,8 @@
 						"selection":
 						[
 							[
-								2312,
-								2485
+								2261,
+								2261
 							]
 						],
 						"settings":
@@ -354,10 +356,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
+						"translation.y": 70.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
