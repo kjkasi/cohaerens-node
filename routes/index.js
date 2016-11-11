@@ -27,19 +27,18 @@ router.post('/', function(req, res) {
 
   //res.json(req.body);
 
-  console.log("req.body: " + req.body);
+  //console.log("req.body: " + req.body);
 
   Condition.findOne({cs: req.body.cs, sv: req.body.sv, kp: req.body.kp, count: req.body.count, power: req.body.power, city: req.body.city}, function(err, condition) {
 
-    console.log("condition: " + condition);
+    //console.log("condition: " + condition);
 
     if (err) throw err;
     Cs.find({}, function(err, allCs) {
       if (err) throw err;
       City.find({}, function(err, allCity) {
         if (err) throw err;
-        //res.json(condition);
-        res.render('index', { title: 'Сohaerens', "allCs": allCs, "allCity": allCity, info: "Информация:" + condition.result});
+        res.render('index', { title: 'Сohaerens', "allCs": allCs, "allCity": allCity, "info": "Информация: " + condition.result});
       });
     });
 

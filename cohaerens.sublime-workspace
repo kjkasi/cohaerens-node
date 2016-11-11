@@ -81,31 +81,38 @@
 			}
 		},
 		{
-			"file": "routes/condition.js",
+			"file": "routes/index.js",
 			"settings":
 			{
-				"buffer_size": 1912,
+				"buffer_size": 2623,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/condition-edit.jade",
+			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 3175,
+				"buffer_size": 2454,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/condition.jade",
+			"file": "models/city.js",
 			"settings":
 			{
-				"buffer_size": 3953,
+				"buffer_size": 204,
 				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "condition.jade"
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 474,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -149,6 +156,15 @@
 	],
 	"file_history":
 	[
+		"/C/Users/AM/work/cohaerens/node_modules/mongo-express/mongo_express_config.js",
+		"/C/Users/AM/work/cohaerens/package.json",
+		"/C/Users/AM/work/cohaerens/models/test.js",
+		"/C/Users/AM/work/cohaerens/routes/condition.js",
+		"/C/Users/AM/work/cohaerens/views/condition-edit.jade",
+		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/routes/index.js",
+		"/C/Users/AM/work/cohaerens/views/condition.jade",
+		"/C/Users/AM/work/cohaerens/routes/cs.js",
 		"/C/Users/AM/Google Диск/volgatech/Диплом/vstu081_366_2012F.dat",
 		"/E/ir50081_366_2012F.dat",
 		"/C/Users/AM/work/cohaerens/routes/training.js",
@@ -156,15 +172,11 @@
 		"/C/Users/AM/work/cohaerens/app.js",
 		"/C/Users/AM/work/cohaerens/views/layout.jade",
 		"/C/Users/AM/work/cohaerens/models/cs.js",
-		"/C/Users/AM/work/cohaerens/routes/condition.js",
-		"/C/Users/AM/work/cohaerens/routes/cs.js",
 		"/C/Users/AM/work/cohaerens/views/training.jade",
 		"/C/Users/AM/work/cohaerens/views/cs-edit.jade",
 		"/C/Users/AM/work/cohaerens/models/training.js",
-		"/C/Users/AM/work/cohaerens/views/index.jade",
 		"/C/Users/AM/work/cohaerens/views/city.jade",
 		"/C/Users/AM/work/cohaerens/views/cs.jade",
-		"/C/Users/AM/work/cohaerens/routes/index.js",
 		"/C/Users/AM/work/cohaerens/models/sv.js",
 		"/C/World of Warcraft/Interface/AddOns/WorldQuestGroupFinder/WorldQuestGroupFinder.toc",
 		"/C/World of Warcraft/Interface/AddOns/ServerHop/ServerHop.toc",
@@ -184,7 +196,6 @@
 		"/D/World of Warcraft/WoW.mfil",
 		"/C/Users/AM/work/cohaerens/views/cs-new.jade",
 		"/C/Users/AM/work/cohaerens/routes/admin.js",
-		"/C/Users/AM/work/cohaerens/package.json",
 		"/C/Users/AM/work/cohaerens/model/account.js",
 		"/C/Program Files/MongoDB/Server/3.2/bin/mongod.cfg",
 		"/C/Users/AM/work/cohaerens/views/admin.jade",
@@ -242,7 +253,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -270,24 +281,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "routes/condition.js",
+					"file": "routes/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1912,
+						"buffer_size": 2623,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1857,
-								1857
+								1275,
+								1275
 							]
 						],
 						"settings":
@@ -297,7 +308,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -305,24 +316,82 @@
 				},
 				{
 					"buffer": 2,
-					"file": "views/condition-edit.jade",
+					"file": "app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3175,
+						"buffer_size": 2454,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2610,
-								2610
+								1617,
+								1617
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "models/city.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -331,35 +400,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "views/condition.jade",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3953,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2261,
-								2261
-							]
-						],
-						"settings":
-						{
-							"auto_name": "condition.jade",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 70.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]

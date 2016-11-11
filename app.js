@@ -7,16 +7,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var admins = require('./routes/admin');
-var accounts = require('./routes/accounts');
+//var admins = require('./routes/admin');
+//var accounts = require('./routes/accounts');
 var cs = require('./routes/cs');
 var city = require('./routes/city');
 var training = require('./routes/training');
 var condition = require('./routes/condition');
 
 var mongoose = require('mongoose');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+//var passport = require('passport');
+//var LocalStrategy = require('passport-local').Strategy;
 var cookieSession = require('cookie-session');
 
 var app = express();
@@ -38,16 +38,16 @@ app.use(cookieSession({
 app.use(express.static(path.join(__dirname, 'public')));
 
 // passport config
-app.use(passport.initialize());
-app.use(passport.session());
-var Account = require('./models/account');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+//app.use(passport.initialize());
+//app.use(passport.session());
+//var Account = require('./models/account');
+//passport.use(new LocalStrategy(Account.authenticate()));
+//passport.serializeUser(Account.serializeUser());
+//passport.deserializeUser(Account.deserializeUser());
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/admin', admins, accounts);
+//app.use('/admin', admins, accounts);
 app.use('/cs', cs);
 app.use('/city', city);
 app.use('/training', training);
