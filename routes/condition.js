@@ -5,9 +5,13 @@ var Condition = require('./../models/condition');
 
 router.get('/', function(req, res, next) {
   
-  //console.log(req.query);
+  var filters = {};
 
-  Condition.find({}, function(err, allConditions) {
+  if (req.query._filters) {
+    filters = JSON.parse(req.query._filters);
+  }
+
+  Condition.find(filters, function(err, allConditions) {
     if (err) throw err;
     res.json(allConditions);
   });

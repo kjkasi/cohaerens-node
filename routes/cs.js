@@ -4,12 +4,14 @@ var Cs = require('./../models/cs');
 
 router.get('/', function(req, res, next) {
   
+  res.json(req.query);
+
   var filters = {};
 
   if (req.query._filters) {
     filters = JSON.parse(req.query._filters);
   }
-
+    //{"title": /qw/i}
   Cs.find(filters, function(err, result) {
     if (err) throw err;
     res.json(result);

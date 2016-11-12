@@ -4,7 +4,13 @@ var Place = require('./../models/place');
 
 router.get('/', function(req, res, next) {
 
-  Place.find({}, function(err, allPlaces) {
+  var filters = {};
+
+  if (req.query._filters) {
+    filters = JSON.parse(req.query._filters);
+  }
+
+  Place.find(filters, function(err, allPlaces) {
     if (err) throw err;
     res.json(allPlaces);
   });
