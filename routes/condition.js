@@ -42,6 +42,7 @@ router.post('/', function(req, res) {
     count: req.body.count,
     power: req.body.power,
     place: req.body.place,
+    date: req.body.date,
     result: req.body.result,
   });
 
@@ -62,6 +63,7 @@ router.put('/:id', function(req, res) {
     condition.count = req.body.count,
     condition.power = req.body.power,
     condition.place = req.body.place,
+    condition.date = req.body.date,
     condition.result = req.body.result,
 
     condition.save(function(err) {

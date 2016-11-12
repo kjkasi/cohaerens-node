@@ -44,7 +44,7 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     var condition = nga.entity('condition').identifier(nga.field('_id'));
 
     condition.listView().fields([
-    	nga.field('_id').isDetailLink(true),
+    	nga.field('_id'),
         nga.field('title'),
         nga.field('cs', 'reference')
         	.targetEntity(cs)
@@ -56,9 +56,9 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
         nga.field('place', 'reference')
         	.targetEntity(place)
         	.targetField(nga.field('title')),
-        nga.field('date'),
+        nga.field('date', 'datetime'),
         nga.field('result'),
-    ]);
+    ]).listActions(['edit', 'delete']);
 
     condition.creationView().fields([
         nga.field('title'),
@@ -95,6 +95,8 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
         nga.field('date', 'datetime'),
         nga.field('result', 'text'),
     ]);
+
+    condition.editionView().fields(condition.creationView().fields());
 
     admin.addEntity(condition)
     
