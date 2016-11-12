@@ -1,19 +1,26 @@
 var myApp = angular.module('myApp', ['ng-admin']);
 myApp.config(['NgAdminConfigurationProvider', function (nga) {
 
-    var admin = nga.application('My First Admin').baseApiUrl('http://127.0.0.1:3000/');
+    var admin = nga.application('Cohaerens admin panel').baseApiUrl('http://127.0.0.1:3000/');
 
     var cs = nga.entity('cs').identifier(nga.field('_id'));
 
     cs.listView().fields([
-    	nga.field('_id').isDetailLink(true),
+    	nga.field('_id'),
         nga.field('title'),
         nga.field('fqStart'),
         nga.field('fqEnd')
+    ])
+    	.listActions(['edit', 'delete'])
+    	.filters([
+        	nga.field('title')
+            .label('Filter')
+            .pinned(true),
     ]);
 
     cs.creationView().fields([
-    	nga.field('title', 'string'),
+    	nga.field('title', 'string')
+    		.validation({ required: true, minlength: 3, maxlength: 20 }),
     	nga.field('fqStart', 'number'),
     	nga.field('fqEnd', 'number')
     ]);
@@ -25,14 +32,15 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     var place = nga.entity('place').identifier(nga.field('_id'));
 
     place.listView().fields([
-    	nga.field('_id').isDetailLink(true),
+    	nga.field('_id'),
         nga.field('title'),
         nga.field('lat'),
         nga.field('long')
-    ]);
+    ]).listActions(['edit', 'delete']);
 
     place.creationView().fields([
-    	nga.field('title'),
+    	nga.field('title', 'string')
+    		.validation({ required: true, minlength: 3, maxlength: 20 }),
     	nga.field('lat', 'float'),
     	nga.field('long', 'float')
     ]);
@@ -61,7 +69,8 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     ]).listActions(['edit', 'delete']);
 
     condition.creationView().fields([
-        nga.field('title'),
+        nga.field('title')
+        	.validation({ required: true, minlength: 3, maxlength: 20 }),
         nga.field('cs', 'reference')
           .targetEntity(cs)
           .targetField(nga.field('title')),
@@ -103,12 +112,17 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     nga.configure(admin);
 }]);
 
+/*myApp.config(['RestangularProvider', function(RestangularProvider) {
+    RestangularProvider.addElementTransformer('cs', function(element) {
+        for (var key in element.docs) {
+            element[key] = element.docs[key];
+        }
+
+        return element;
+    });
+}]);
+*/
 myApp.config(['RestangularProvider', function (RestangularProvider) {
-
-	RestangularProvider.setRestangularFields({
-  		id: "_id"
-	});
-
     RestangularProvider.addFullRequestInterceptor(function(element, operation, what, url, headers, params) {
         if (operation == "getList") {
             delete params._page;
@@ -119,4 +133,15 @@ myApp.config(['RestangularProvider', function (RestangularProvider) {
         }
         return { params: params };
     });
+/*    RestangularProvider.addFullRequestInterceptor(function(element, operation, what, url, headers, params, httpConfig) {
+        if (operation == 'getList' && what == 'cs') {
+            if (params._filters) {
+                for (var filter in params._filters) {
+                    params[filter] = params._filters[filter];
+                }
+                delete params._filters;
+            }
+        }
+        return { params: params };
+    });*/
 }]);

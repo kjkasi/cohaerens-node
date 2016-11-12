@@ -4,11 +4,15 @@ var Cs = require('./../models/cs');
 
 router.get('/', function(req, res, next) {
   
-  //console.log(req.query);
+  var filters = {};
 
-  Cs.find({}, function(err, allCs) {
+  if (req.query._filters) {
+    filters = JSON.parse(req.query._filters);
+  }
+
+  Cs.find(filters, function(err, result) {
     if (err) throw err;
-    res.json(allCs);
+    res.json(result);
   });
   
 });
@@ -24,9 +28,9 @@ router.get('/:id', function(req, res) {
 router.post('/', function(req, res) {
 
   var cs = new Cs ({
-        title: req.body.title,
-        fqStart: req.body.fqStart,
-        fqEnd: req.body.fqEnd,
+    title: req.body.title,
+    fqStart: req.body.fqStart,
+    fqEnd: req.body.fqEnd,
   });
 
   cs.save(function(err){
