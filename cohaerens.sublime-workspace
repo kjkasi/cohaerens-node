@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"result"
+			],
+			[
+				"fq",
+				"fqEnd"
+			],
+			[
+				"fin",
+				"findById"
+			],
+			[
+				"a",
+				"allCs"
+			],
+			[
 				"fi",
 				"field"
 			],
@@ -18,10 +34,6 @@
 			[
 				"all",
 				"allConditions"
-			],
-			[
-				"fin",
-				"function"
 			],
 			[
 				"co",
@@ -42,10 +54,6 @@
 			[
 				"train",
 				"trainingSet"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"nu",
@@ -105,7 +113,7 @@
 			"file": "public/admin.js",
 			"settings":
 			{
-				"buffer_size": 1215,
+				"buffer_size": 3434,
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "admin.js"
@@ -115,16 +123,25 @@
 			"file": "routes/cs.js",
 			"settings":
 			{
-				"buffer_size": 1441,
+				"buffer_size": 1108,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "models/cs.js",
+			"file": "routes/place.js",
 			"settings":
 			{
-				"buffer_size": 189,
+				"buffer_size": 1106,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "routes/condition.js",
+			"settings":
+			{
+				"buffer_size": 1747,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -170,13 +187,13 @@
 	],
 	"file_history":
 	[
+		"/C/Users/AM/work/cohaerens/models/place.js",
+		"/C/Users/AM/work/cohaerens/models/cs.js",
+		"/C/Users/AM/work/test/admin.js",
 		"/C/Users/AM/work/cohaerens/routes/condition.js",
 		"/C/Users/AM/work/cohaerens/routes/place.js",
 		"/C/Users/AM/work/cohaerens/routes/cs.js",
-		"/C/Users/AM/work/cohaerens/models/place.js",
 		"/C/Users/AM/work/cohaerens/routes/admin.js",
-		"/C/Users/AM/work/cohaerens/models/cs.js",
-		"/C/Users/AM/work/test/admin.js",
 		"/C/Users/AM/work/cohaerens/package.json",
 		"/C/Users/AM/work/cohaerens/public/admin.html",
 		"/C/Users/AM/work/test/index.html",
@@ -306,7 +323,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -336,7 +353,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -345,15 +362,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1215,
+						"buffer_size": 3434,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								471,
-								471
+								1569,
+								1569
 							]
 						],
 						"settings":
@@ -362,7 +379,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 294.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -374,15 +391,75 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1441,
+						"buffer_size": 1108,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								807,
-								807
+								102,
+								1081
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 210.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "routes/place.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "routes/condition.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1747,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								660,
+								660
 							]
 						],
 						"settings":
@@ -396,34 +473,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "models/cs.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 189,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								141
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -6,8 +6,15 @@ router.get('/', function(req, res, next) {
 
   Place.find({}, function(err, allPlaces) {
     if (err) throw err;
-    //res.render('place', { title: 'Города', "allPlaces": allPlaces});
     res.json(allPlaces);
+  });
+  
+});
+
+router.get('/:id', function(req, res) {
+
+  Place.findById(req.params.id, function(err, place) {
+    res.json(place);
   });
 
 });
@@ -15,53 +22,39 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
 
   var place = new Place ({
-        title: req.body.title,
-        lat: req.body.lat,
-        long: req.body.long,  
-    });
+    title: req.body.title,
+    lat: req.body.lat,
+    long: req.body.long,
+  });
 
   place.save(function(err){
     if (err) throw err;
-    res.redirect('place');
+    res.sendStatus(200);
   });
+
 });
 
-router.post('/:id/delete', function(req, res) {
+router.put('/:id', function(req, res) {
+  
+  Place.findById(req.params.id, function(err, place) {
+    place.title = req.body.title;
+    place.lat = req.body.lat;
+    place.lat = req.body.long;
+
+    place.save(function(err) {
+      if (err) throw err;
+      res.sendStatus(200);
+    });
+  });
+
+});
+
+router.delete('/:id', function(req, res) {
   
   Place.findById(req.params.id, function (err, place) {
     place.remove();
-    res.redirect("/place");
+    res.sendStatus(200);
   });
-});
-
-router.get('/:id/edit', function(req, res) {
-  
-  Place.findById(req.params.id, function (err, place) {
-    res.render("place-edit", {"place": place});
-  });
-
-});
-
-router.post('/:id/edit', function(req, res) {
-  
-  Place.findById(req.params.id, function (err, place) {
-    place.title = req.body.title;
-    place.lat = req.body.lat;
-    place.long = req.body.long;
-    
-    place.save(function(err) {
-      if (err) throw err;
-      res.redirect('place');
-    })
-
-  });
-
-});
-
-router.post('/new', function(req, res) {
-  
-  res.render("place-new");
-
 });
 
 module.exports = router;

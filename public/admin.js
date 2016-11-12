@@ -33,8 +33,8 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
 
     place.creationView().fields([
     	nga.field('title'),
-    	nga.field('lat'),
-    	nga.field('long')
+    	nga.field('lat', 'float'),
+    	nga.field('long', 'float')
     ]);
 
     place.editionView().fields(place.creationView().fields());
@@ -44,8 +44,56 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
     var condition = nga.entity('condition').identifier(nga.field('_id'));
 
     condition.listView().fields([
+    	nga.field('_id').isDetailLink(true),
         nga.field('title'),
+        nga.field('cs', 'reference')
+        	.targetEntity(cs)
+        	.targetField(nga.field('title')),
+        nga.field('sv'),
+        nga.field('kp'),
+        nga.field('count'),
+        nga.field('power'),
+        nga.field('place', 'reference')
+        	.targetEntity(place)
+        	.targetField(nga.field('title')),
+        nga.field('date'),
         nga.field('result'),
+    ]);
+
+    condition.creationView().fields([
+        nga.field('title'),
+        nga.field('cs', 'reference')
+          .targetEntity(cs)
+          .targetField(nga.field('title')),
+        nga.field('sv', 'choice').choices([
+        		{value: 0, label: 'Спокойный'},
+        		{value: 1, label: 'Возбужденный'}
+        	]),
+        nga.field('kp', 'choice').choices([
+        		{value: 0, label: '0'},
+        		{value: 1, label: '1'},
+        		{value: 2, label: '2'},
+        		{value: 3, label: '3'},
+        		{value: 4, label: '4'},
+        		{value: 5, label: '5'},
+        		{value: 6, label: '6'},
+        		{value: 7, label: '7'},
+        		{value: 8, label: '8'},
+        		{value: 9, label: '9'},
+        	]),
+        nga.field('count'),
+        nga.field('power', 'choice').choices([
+        		{value: 0, label: 'A'},
+        		{value: 1, label: 'B'},
+        		{value: 2, label: 'C'},
+        		{value: 3, label: 'M'},
+        		{value: 4, label: 'X'},
+        	]),
+        nga.field('place', 'reference')
+          .targetEntity(place)
+          .targetField(nga.field('title')),
+        nga.field('date', 'datetime'),
+        nga.field('result', 'text'),
     ]);
 
     admin.addEntity(condition)
