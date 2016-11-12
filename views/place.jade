@@ -36,18 +36,18 @@ block content
               th Редактировать
               th Удалить
           tbody
-            if allCity
-              each city, index in allCity
+            if allPlaces
+              each place, index in allPlaces
                 tr
                   td= index + 1
-                  td= city.title
-                  td= city.lat
-                  td= city.long
+                  td= place.title
+                  td= place.lat
+                  td= place.long
                   td
-                    form(action="/city/#{city.id}/edit", method="get")
+                    form(action="/city/#{place.id}/edit", method="get")
                       button(type="submit", class="btn btn-warning btn-xs") Редактировать
                   td
-                    form(action="/city/#{city.id}/delete", method="post")
+                    form(action="/city/#{place.id}/delete", method="post")
                       button(type="submit", class="btn btn-danger btn-xs") Удалить
 
 block link

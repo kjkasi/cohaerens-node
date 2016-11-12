@@ -5,11 +5,21 @@ var condition = require('./../models/condition');
 
 router.get('/', function(req, res, next) {
   
+  //console.log(req.query);
+
   Cs.find({}, function(err, allCs) {
     if (err) throw err;
-    res.render('cs', { title: 'Системы связи', "allCs": allCs});
+    res.json(allCs);
   });
-  //res.render('cs', { title: 'Системы связи' });
+  
+});
+
+router.get('/:id', function(req, res) {
+
+  Cs.findById(req.params.id, function(err, cs) {
+    res.json(cs);
+  });
+
 });
 
 router.post('/', function(req, res) {
@@ -17,17 +27,36 @@ router.post('/', function(req, res) {
   var cs = new Cs ({
         title: req.body.title,
         fqStart: req.body.fqStart,
-        fqEnd: req.body.fqEnd,  
-    });
+        fqEnd: req.body.fqEnd,
+  });
 
   cs.save(function(err){
     if (err) throw err;
+    res.sendStatus(200);
+  });
 
-    Cs.find({}, function(err, allCs) {
+});
+
+router.put('/:id', function(req, res) {
+  
+  Cs.findById(req.params.id, function(err, cs) {
+    cs.title = req.body.title;
+    cs.fqStart = req.body.fqStart;
+    cs.fqEnd = req.body.fqEnd;
+
+    cs.save(function(err) {
       if (err) throw err;
-        res.render('cs');
+      res.sendStatus(200);
     });
   });
+
+});
+
+router.delete('/', function(req, res) {
+  
+  console.log('delete: ' + req.body);
+  res.sendStatus(200);
+
 });
 
 router.post('/:id/delete', function(req, res) {

@@ -10,7 +10,7 @@ var Condition = new Schema({
   kp:  Number,
   count:  Number,
   power:  Number,
-  city:  {type: Schema.Types.ObjectId, ref: 'City'},
+  place:  {type: Schema.Types.ObjectId, ref: 'Place'},
   date: Date,
   result: String
 });

@@ -2,20 +2,21 @@ var express = require('express');
 var router = express.Router();
 
 var Cs = require('./../models/cs');
-var City = require('./../models/city');
+var Place = require('./../models/place');
 var Condition = require('./../models/condition');
 
 router.get('/', function(req, res, next) {
 
   Condition.find({}).populate('city').populate('cs').exec(function(err, allConditions){
     if (err) throw err;
-    Cs.find({}, function(err, allCs) {
+    res.json(allConditions);
+    /*Cs.find({}, function(err, allCs) {
       if (err) throw err;
-      City.find({}, function(err, allCity) {
+      Place.find({}, function(err, allPlaces) {
         if (err) throw err;
-        res.render('condition', {"allCs": allCs, "allCity": allCity, "allConditions": allConditions});
+        res.render('condition', {"allCs": allCs, "allPlaces": allPlaces, "allConditions": allConditions});
       });
-    });
+    });*/
   });
 });
 
@@ -57,11 +58,11 @@ router.get('/:id/edit', function(req, res) {
     if (err) throw err;
     Cs.find({}, function(err, allCs) {
       if (err) throw err;
-      City.find({}, function(err, allCity) {
+      Place.find({}, function(err, allPlaces) {
         if (err) throw err;
         Condition.findById(req.params.id, function(err, condition){
           if (err) throw err;
-          res.render('condition-edit', {"allCs": allCs, "allCity": allCity, "allConditions": allConditions, condition: condition, "info": condition.getDateFormat(), "date": condition.getDateFormat()});
+          res.render('condition-edit', {"allCs": allCs, "allPlaces": allPlaces, "allConditions": allConditions, condition: condition, "info": condition.getDateFormat(), "date": condition.getDateFormat()});
         });
       });
     });

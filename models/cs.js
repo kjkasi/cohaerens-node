@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 var Cs = new Schema({
   title:  String,
-  fqStart: String,
-  fqEnd: String
+  fqStart: Number,
+  fqEnd: Number,
 });
 
 module.exports = mongoose.model('Cs', Cs);

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"fi",
+				"field"
+			],
+			[
+				"fie",
+				"fields"
+			],
+			[
+				"allC",
+				"allConditions"
+			],
+			[
+				"all",
+				"allConditions"
+			],
+			[
+				"fin",
+				"function"
+			],
+			[
 				"co",
 				"condition"
 			],
@@ -14,10 +34,6 @@
 			[
 				"tra",
 				"training"
-			],
-			[
-				"fin",
-				"findById"
 			],
 			[
 				"get",
@@ -48,10 +64,6 @@
 				"find"
 			],
 			[
-				"all",
-				"allTraining"
-			],
-			[
 				"Tra",
 				"Training"
 			],
@@ -72,47 +84,49 @@
 	"buffers":
 	[
 		{
-			"file": "models/condition.js",
-			"settings":
-			{
-				"buffer_size": 545,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "routes/index.js",
-			"settings":
-			{
-				"buffer_size": 2623,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 2454,
+				"buffer_size": 1867,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "models/city.js",
+			"file": "public/admin.html",
 			"settings":
 			{
-				"buffer_size": 204,
+				"buffer_size": 442,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "public/admin.js",
 			"settings":
 			{
-				"buffer_size": 474,
-				"line_ending": "Unix"
+				"buffer_size": 1215,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "admin.js"
+			}
+		},
+		{
+			"file": "routes/cs.js",
+			"settings":
+			{
+				"buffer_size": 1441,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "models/cs.js",
+			"settings":
+			{
+				"buffer_size": 189,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -156,35 +170,44 @@
 	],
 	"file_history":
 	[
-		"/C/Users/AM/work/cohaerens/node_modules/mongo-express/mongo_express_config.js",
-		"/C/Users/AM/work/cohaerens/package.json",
-		"/C/Users/AM/work/cohaerens/models/test.js",
 		"/C/Users/AM/work/cohaerens/routes/condition.js",
-		"/C/Users/AM/work/cohaerens/views/condition-edit.jade",
-		"/C/Users/AM/work/cohaerens/views/index.jade",
-		"/C/Users/AM/work/cohaerens/routes/index.js",
-		"/C/Users/AM/work/cohaerens/views/condition.jade",
+		"/C/Users/AM/work/cohaerens/routes/place.js",
 		"/C/Users/AM/work/cohaerens/routes/cs.js",
+		"/C/Users/AM/work/cohaerens/models/place.js",
+		"/C/Users/AM/work/cohaerens/routes/admin.js",
+		"/C/Users/AM/work/cohaerens/models/cs.js",
+		"/C/Users/AM/work/test/admin.js",
+		"/C/Users/AM/work/cohaerens/package.json",
+		"/C/Users/AM/work/cohaerens/public/admin.html",
+		"/C/Users/AM/work/test/index.html",
+		"/C/Users/AM/work/cohaerens/models/condition.js",
+		"/C/Users/AM/work/cohaerens/views/place.jade",
+		"/C/Users/AM/work/cohaerens/views/layout.jade",
+		"/C/Users/AM/work/cohaerens/routes/training.js",
+		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/app.js",
+		"/C/Users/AM/work/cohaerens/routes/index.js",
+		"/C/Users/AM/work/cohaerens/views/city.jade",
+		"/C/Users/AM/work/cohaerens/views/place-edit.jade",
+		"/C/Users/AM/work/cohaerens/routes/city.js",
+		"/C/Users/AM/work/cohaerens/models/account.js",
+		"/C/Users/AM/work/cohaerens/models/city.js",
+		"/C/Users/AM/work/cohaerens/node_modules/mongo-express/mongo_express_config.js",
+		"/C/Users/AM/work/cohaerens/models/test.js",
+		"/C/Users/AM/work/cohaerens/views/condition-edit.jade",
+		"/C/Users/AM/work/cohaerens/views/condition.jade",
 		"/C/Users/AM/Google Диск/volgatech/Диплом/vstu081_366_2012F.dat",
 		"/E/ir50081_366_2012F.dat",
-		"/C/Users/AM/work/cohaerens/routes/training.js",
 		"/C/Users/AM/work/cohaerens/views/training-edit.jade",
-		"/C/Users/AM/work/cohaerens/app.js",
-		"/C/Users/AM/work/cohaerens/views/layout.jade",
-		"/C/Users/AM/work/cohaerens/models/cs.js",
 		"/C/Users/AM/work/cohaerens/views/training.jade",
 		"/C/Users/AM/work/cohaerens/views/cs-edit.jade",
 		"/C/Users/AM/work/cohaerens/models/training.js",
-		"/C/Users/AM/work/cohaerens/views/city.jade",
 		"/C/Users/AM/work/cohaerens/views/cs.jade",
 		"/C/Users/AM/work/cohaerens/models/sv.js",
 		"/C/World of Warcraft/Interface/AddOns/WorldQuestGroupFinder/WorldQuestGroupFinder.toc",
 		"/C/World of Warcraft/Interface/AddOns/ServerHop/ServerHop.toc",
 		"/C/World of Warcraft/Interface/AddOns/Skada/Skada.toc",
-		"/C/Users/AM/work/cohaerens/models/account.js",
-		"/C/Users/AM/work/cohaerens/models/city.js",
 		"/C/Users/AM/work/cohaerens/views/city-edit.jade",
-		"/C/Users/AM/work/cohaerens/routes/city.js",
 		"/C/Users/AM/work/jade-test/public/form.html",
 		"/C/Users/AM/work/jade-test/public/forms.html",
 		"/D/World of Warcraft/WTF/Config.wtf",
@@ -195,7 +218,6 @@
 		"/D/zona/Новая папка/Client(GAME)/WoW.mfil",
 		"/D/World of Warcraft/WoW.mfil",
 		"/C/Users/AM/work/cohaerens/views/cs-new.jade",
-		"/C/Users/AM/work/cohaerens/routes/admin.js",
 		"/C/Users/AM/work/cohaerens/model/account.js",
 		"/C/Program Files/MongoDB/Server/3.2/bin/mongod.cfg",
 		"/C/Users/AM/work/cohaerens/views/admin.jade",
@@ -222,7 +244,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -236,6 +258,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"admin"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -258,24 +281,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "models/condition.js",
+					"file": "app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 545,
+						"buffer_size": 1867,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								1141,
+								1141
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -286,56 +311,55 @@
 				},
 				{
 					"buffer": 1,
-					"file": "routes/index.js",
+					"file": "public/admin.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2623,
+						"buffer_size": 442,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1275,
-								1275
+								101,
+								101
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app.js",
+					"file": "public/admin.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2454,
+						"buffer_size": 1215,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1617,
-								1617
+								471,
+								471
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_name": "admin.js",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -346,19 +370,49 @@
 				},
 				{
 					"buffer": 3,
-					"file": "models/city.js",
+					"file": "routes/cs.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 204,
+						"buffer_size": 1441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								152,
-								152
+								807,
+								807
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "models/cs.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
 							]
 						],
 						"settings":
@@ -369,37 +423,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 474,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -407,7 +431,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -444,7 +468,7 @@
 	"project": "cohaerens.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":

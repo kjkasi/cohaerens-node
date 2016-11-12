@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Cs = require('./../models/cs');
-var City = require('./../models/city');
+var Place = require('./../models/place');
 var Training = require('./../models/training');
 
 var synaptic = require('synaptic');
@@ -18,10 +18,10 @@ router.get('/', function(req, res, next) {
     if (err) throw err;
     Cs.find({}, function(err, allCs) {
       if (err) throw err;
-      City.find({}, function(err, allCity) {
+      Place.find({}, function(err, allPlaces) {
         if (err) throw err;
         //res.json(allTraining);
-        res.render('training', {"allCs": allCs, "allCity": allCity, "allTraining": allTraining});
+        res.render('training', {"allCs": allCs, "allPlaces": allPlaces, "allTraining": allTraining});
       });
     });
   });
@@ -84,7 +84,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res) {
 
-  City.findById(req.body.city, function(err, city){
+  Place.findById(req.body.place, function(err, place){
 
     if (err) throw err;
     var training = new Training ({

@@ -43,10 +43,10 @@ block content
             option(value=3)= 'M'
             option(value=4)= 'X'
           br
-          label(for="selectCity") Выбор города&nbsp
-          select(id="selectCity", name="city")
-            each city in allCity
-              option(value=city.id)= city.title
+          label(for="selectPlace") Выбор место&nbsp
+          select(id="selectPlace", name="place")
+            each place in allPlaces
+              option(value=place.id)= place.title
 
         button(class="btn btn-success", type="submit") Поехали
 
