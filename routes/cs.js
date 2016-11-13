@@ -4,7 +4,7 @@ var Cs = require('./../models/cs');
 
 router.get('/', function(req, res, next) {
   
-  res.json(req.query);
+  //res.json(req.query);
 
   var filters = {};
 

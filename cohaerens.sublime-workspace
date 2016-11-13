@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"fil",
+				"filter"
+			],
+			[
+				"t",
+				"title"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
 				"re",
 				"result"
 			],
@@ -38,10 +50,6 @@
 			[
 				"co",
 				"condition"
-			],
-			[
-				"t",
-				"throw"
 			],
 			[
 				"tra",
@@ -92,47 +100,13 @@
 	"buffers":
 	[
 		{
-			"file": "app.js",
-			"settings":
-			{
-				"buffer_size": 1867,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/admin.html",
-			"settings":
-			{
-				"buffer_size": 442,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/admin.js",
-			"settings":
-			{
-				"buffer_size": 3434,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "admin.js"
-			}
-		},
-		{
+			"contents": "var express = require('express');\nvar router = express.Router();\nvar Cs = require('./../models/cs');\n\nrouter.get('/', function(req, res, next) {\n  \n  //res.json(req.query);\n\n  var filters = {};\n\n  if (req.query._filters) {\n    filters = JSON.parse(req.query._filters);\n  }\n    //{\"title\": /qw/i}\n  Cs.find(filters, function(err, result) {\n    if (err) throw err;\n    res.json(result);\n  });\n  \n});\n\nrouter.get('/:id', function(req, res) {\n\n  Cs.findById(req.params.id, function(err, cs) {\n    res.json(cs);\n  });\n\n});\n\nrouter.post('/', function(req, res) {\n\n  var cs = new Cs ({\n    title: req.body.title,\n    fqStart: req.body.fqStart,\n    fqEnd: req.body.fqEnd,\n  });\n\n  cs.save(function(err){\n    if (err) throw err;\n    res.sendStatus(200);\n  });\n\n});\n\nrouter.put('/:id', function(req, res) {\n  \n  Cs.findById(req.params.id, function(err, cs) {\n    cs.title = req.body.title;\n    cs.fqStart = req.body.fqStart;\n    cs.fqEnd = req.body.fqEnd;\n\n    cs.save(function(err) {\n      if (err) throw err;\n      res.sendStatus(200);\n    });\n  });\n\n});\n\nrouter.delete('/:id', function(req, res) {\n  \n  Cs.findById(req.params.id, function (err, cs) {\n    cs.remove();\n    res.sendStatus(200);\n  });\n});\n\nmodule.exports = router;\n",
 			"file": "routes/cs.js",
+			"file_size": 1288,
+			"file_write_time": 131234525099906868,
 			"settings":
 			{
-				"buffer_size": 1108,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "routes/place.js",
-			"settings":
-			{
-				"buffer_size": 1106,
+				"buffer_size": 1222,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -141,9 +115,28 @@
 			"file": "routes/condition.js",
 			"settings":
 			{
-				"buffer_size": 1747,
+				"buffer_size": 1884,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "routes/place.js",
+			"settings":
+			{
+				"buffer_size": 1211,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/admin.js",
+			"settings":
+			{
+				"buffer_size": 4010,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "admin.js"
 			}
 		}
 	],
@@ -181,29 +174,28 @@
 	[
 		"/C/Users/AM/work/cohaerens",
 		"/C/Users/AM/work/cohaerens/models",
-		"/C/Users/AM/work/cohaerens/public",
 		"/C/Users/AM/work/cohaerens/routes",
 		"/C/Users/AM/work/cohaerens/views"
 	],
 	"file_history":
 	[
-		"/C/Users/AM/work/cohaerens/models/place.js",
+		"/C/Users/AM/work/cohaerens/public/admin.html",
 		"/C/Users/AM/work/cohaerens/models/cs.js",
-		"/C/Users/AM/work/test/admin.js",
+		"/C/Users/AM/work/cohaerens/routes/index.js",
+		"/C/Users/AM/work/cohaerens/views/index.jade",
+		"/C/Users/AM/work/cohaerens/views/layout.jade",
+		"/C/Users/AM/work/cohaerens/app.js",
 		"/C/Users/AM/work/cohaerens/routes/condition.js",
 		"/C/Users/AM/work/cohaerens/routes/place.js",
+		"/C/Users/AM/work/cohaerens/models/place.js",
+		"/C/Users/AM/work/test/admin.js",
 		"/C/Users/AM/work/cohaerens/routes/cs.js",
 		"/C/Users/AM/work/cohaerens/routes/admin.js",
 		"/C/Users/AM/work/cohaerens/package.json",
-		"/C/Users/AM/work/cohaerens/public/admin.html",
 		"/C/Users/AM/work/test/index.html",
 		"/C/Users/AM/work/cohaerens/models/condition.js",
 		"/C/Users/AM/work/cohaerens/views/place.jade",
-		"/C/Users/AM/work/cohaerens/views/layout.jade",
 		"/C/Users/AM/work/cohaerens/routes/training.js",
-		"/C/Users/AM/work/cohaerens/views/index.jade",
-		"/C/Users/AM/work/cohaerens/app.js",
-		"/C/Users/AM/work/cohaerens/routes/index.js",
 		"/C/Users/AM/work/cohaerens/views/city.jade",
 		"/C/Users/AM/work/cohaerens/views/place-edit.jade",
 		"/C/Users/AM/work/cohaerens/routes/city.js",
@@ -293,24 +285,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app.js",
+					"file": "routes/cs.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1867,
+						"buffer_size": 1222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1141,
-								1141
+								152,
+								152
 							]
 						],
 						"settings":
@@ -321,85 +313,26 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/admin.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 442,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								101,
-								101
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/admin.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3434,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1569,
-								1569
-							]
-						],
-						"settings":
-						{
-							"auto_name": "admin.js",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 294.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "routes/cs.js",
+					"buffer": 1,
+					"file": "routes/condition.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1108,
+						"buffer_size": 1884,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								102,
-								1081
+								426,
+								426
 							]
 						],
 						"settings":
@@ -409,27 +342,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "routes/place.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1106,
+						"buffer_size": 1211,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								150,
-								150
+								272,
+								272
 							]
 						],
 						"settings":
@@ -446,30 +379,30 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "routes/condition.js",
+					"buffer": 3,
+					"file": "public/admin.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1747,
+						"buffer_size": 4010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								660,
-								660
+								1395,
+								1395
 							]
 						],
 						"settings":
 						{
+							"auto_name": "admin.js",
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 252.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
