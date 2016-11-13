@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
   Cs.find(filters).skip(offset).limit(limit).exec(function(err, result) {
     if (err) throw err;
-    Cs.count({}, function(err, count) {
+    Cs.count(filters, function(err, count) {
       res.set({"X-Total-Count": count});
       res.json(result);
     });
