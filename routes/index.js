@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
       if (err) throw err;
       Place.find({}, function(err, allPlaces) {
         if (err) throw err;
-        res.render('index', { title: 'Сohaerens', "allCs": allCs, "allPlaces": allPlaces, "info": "Информация: " + condition});
+        res.render('index', { title: 'Сohaerens', "allCs": allCs, "allPlaces": allPlaces, "info": "Информация: " + condition.result});
       });
     });
   });
