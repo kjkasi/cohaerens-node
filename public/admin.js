@@ -154,3 +154,15 @@ myApp.config(['RestangularProvider', function (RestangularProvider) {
 		return { params: params };
 	});*/
 }]);
+
+myApp.config(['RestangularProvider', function(RestangularProvider) {
+    RestangularProvider.addFullRequestInterceptor(function(element, operation, what, url, headers, params, httpConfig) {
+        if (operation == 'getList' && what == 'cs') {
+            params.offset = (params._page - 1) * params._perPage;
+            params.limit = params._perPage;
+            delete params._page;
+            delete params._perPage;
+        }
+        return { params: params };
+    });
+}]);
