@@ -134,8 +134,8 @@ myApp.config(['NgAdminConfigurationProvider', function (nga) {
 myApp.config(['RestangularProvider', function (RestangularProvider) {
 	RestangularProvider.addFullRequestInterceptor(function(element, operation, what, url, headers, params) {
 		if (operation == "getList") {
-			delete params._page;
-			delete params._perPage;
+			//delete params._page;
+			//delete params._perPage;
 			delete params._end;
 			delete params._sortDir;
 			delete params._sortField;
@@ -155,7 +155,7 @@ myApp.config(['RestangularProvider', function (RestangularProvider) {
 	});*/
 }]);
 
-myApp.config(['RestangularProvider', function(RestangularProvider) {
+/*myApp.config(['RestangularProvider', function(RestangularProvider) {
     RestangularProvider.addFullRequestInterceptor(function(element, operation, what, url, headers, params, httpConfig) {
         if (operation == 'getList' && what == 'cs') {
             params.offset = (params._page - 1) * params._perPage;
@@ -165,4 +165,4 @@ myApp.config(['RestangularProvider', function(RestangularProvider) {
         }
         return { params: params };
     });
-}]);
+}]);*/

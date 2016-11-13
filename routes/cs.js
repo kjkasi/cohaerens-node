@@ -3,24 +3,18 @@ var router = express.Router();
 var Cs = require('./../models/cs');
 
 router.get('/', function(req, res, next) {
-  
-  //res.json(req.query);
 
   var filters = {};
 
   if (req.query._filters) {
     filters = JSON.parse(req.query._filters);
   }
-    //{"title": /qw/i}
-  /*Cs.find(filters, function(err, result) {
-    if (err) throw err;
-    res.json(result);
-  });*/
 
-  var offset = Number(req.query.offset);
-  var limit = Number(req.query.limit);
+  var page = Number(req.query._page);
+  var perPage = Number(req.query._perPage);
 
-
+  var offset = (page - 1) * perPage;
+  var limit = perPage;
 
   Cs.find(filters).skip(offset).limit(limit).exec(function(err, result) {
     if (err) throw err;
